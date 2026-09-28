@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(232,176,75,0.08), transparent 60%),
+    #0A0F1F;
+  color: #EDE8DC;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #E8B04B;
+}
+
+/* verdict stamp animation on the hero */
+@keyframes stampIn {
+  0% { transform: rotate(-12deg) scale(2.4); opacity: 0; }
+  60% { transform: rotate(-12deg) scale(0.92); opacity: 1; }
+  100% { transform: rotate(-12deg) scale(1); opacity: 1; }
+}
+.stamp { animation: stampIn 0.7s cubic-bezier(.2,.8,.2,1) 0.3s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp { animation: none; }
+}
+
+input[type="range"] { accent-color: #E8B04B; }
+::selection { background: #E8B04B; color: #0A0F1F; }
